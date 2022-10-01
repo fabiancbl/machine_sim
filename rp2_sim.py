@@ -1,4 +1,5 @@
-def asm_pio(*args, **kwargs):#hola
+'''modificacion de comentarios GitHub'''
+def asm_pio(*args, **kwargs):
     def decorador(programa):
         def compilador():
             print("Parámetros", kwargs)
