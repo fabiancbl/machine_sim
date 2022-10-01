@@ -1,4 +1,5 @@
-'''modificacion de comentarios GitHub'''
+'''modificacion de comentarios Gitub'''
+#funcion decorador que pide como parametro programa
 def asm_pio(*args, **kwargs):
     def decorador(programa):
         def compilador():
@@ -7,7 +8,7 @@ def asm_pio(*args, **kwargs):
             return None
         return compilador
     return decorador
-
+#funcion que retorna decorador_instr
 def decorador_instr(fun_inst):
     def decoracion_instr(self,*args, **kwargs):
         fun_inst(self,*args, **kwargs)
@@ -21,6 +22,7 @@ class PIO():
 
 
 class StateMachine:
+    #funcion que inicializa las maquinas de estado finito
   def __init__(self, id_, program, freq=125000000, **kwargs):
         global sm_iniciandose,fsms
         sm_iniciandose=self
