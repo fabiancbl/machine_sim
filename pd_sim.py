@@ -1,6 +1,9 @@
 class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
+    def iat(self):
+        
+    
 
 
 
