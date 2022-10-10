@@ -7,6 +7,9 @@ class DataFrame:
         if isinstance(indice,slice):
             print('slice',indice.start,indice.step,indice.stop)
 
+    def _setitem_(indice, valor):
+
+
 
 
 def read_csv(arch,sep=','):
