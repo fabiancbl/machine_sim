@@ -25,7 +25,7 @@ def read_csv(arch,sep=','):
         
 #prueba
 d=read_csv('datos.csv')
-print(d.data)
-print(d[6])
-print(d[3:9:2])
-print(d[:])
+#print(d.data)
+#print(d[2])
+#print(d[3:9:2])
+#print(d[:])
