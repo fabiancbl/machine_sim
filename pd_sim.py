@@ -2,6 +2,7 @@ class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
         
+
     def __getitem__(self, indice):
         print('indice',indice)
         if isinstance(indice,slice):
@@ -12,9 +13,13 @@ class DataFrame:
         c=b[column]
         print(c)
         
-    
 
-def funcion_tail(arch, n,sep=';'):
+            
+def __getitem__(self,i):
+        print ("Indice: ",i) 
+ 
+ 
+def funcion_tail(arch, n):
 	with open(arch) as f:
 		lineas = [lineas.strip('\n') for lineas in f.readlines()]
 	return lineas[-n:]
@@ -40,12 +45,13 @@ print(d.data)
 print(d[6])
 print(d[3:9:2])
 print(d[:])
+
 #x=sum(map(len,d.data.values()))
 #print(x)
 
-for c in d.data.keys():
-    print (d.data[c])
-    
+
+
+
 for t in d.data:
    print (t, ":", d.data[t])
    
@@ -61,3 +67,16 @@ print(d.data)
 #prueba Willian
 #d=read_csv('datos.csv')
 #print(d.data)
+z=len(funcion_tail("datos.csv",5))
+
+print ("\n",funcion_tail("datos.csv",5))
+
+strA="".join(funcion_tail("datos.csv",5))
+
+print(strA)
+
+print(d.data)
+print(d[6])
+print(d[3:9:2])
+print(d[:])
+
