@@ -25,7 +25,8 @@ def funcion_tail(arch, n):
 	return lineas[-n:]
  
  
-def read_csv(arch,sep=';'):
+
+def read_csv(arch,sep=','):
     arch = open(arch)
     linea=arch.readline()
     data={}
@@ -38,7 +39,9 @@ def read_csv(arch,sep=';'):
     for linea in arch.readlines():
         for i,elem in enumerate(linea.split(sep)):
             data[titulos[i]].append(elem.strip())
-    return DataFrame(data)           
+    return DataFrame(data)         
+
+
 #prueba
 d=read_csv('datos.csv')
 print(d.data)
@@ -86,4 +89,14 @@ print(d[:])
 d=read_csv('datos.csv')
 print(d.data)
 
+def loc (columna,fila=None): #Función para seleccionar por etiquetas (loc), identificar filas y columnas identificando si es un str, int, slice.
+    dat=titulo
+    fila=titulo
 
+    
+#prueba
+d=read_csv('datos.csv')
+print(d.data)
+print(d[6])
+print(d[3:9:2])
+print(d[:])
