@@ -31,6 +31,7 @@ def read_csv(arch,sep=';'):
     for linea in arch.readlines():
         for i,elem in enumerate(linea.split(sep)):
             data[titulos[i]].append(elem.strip())
+<<<<<<< HEAD
     return DataFrame(data)           
 #prueba
 d=read_csv('datos.csv')
@@ -53,3 +54,13 @@ for t in d.data:
   
 print ("\n",funcion_tail("datos.csv",5))  
 >>>>>>> origin/fabian048
+=======
+    
+    return DataFrame(data)
+            
+        
+#pruebaaa
+d=read_csv('datos.csv')
+print(d.data)
+
+>>>>>>> origin/ParadaArias5012
