@@ -5,6 +5,15 @@ class DataFrame:
         print("Indice: ",i)
         if isinstance(i,slice):
             print("slice",i.start,i.stop,i.step)
+    def iloc(self,i):
+        #if isinstance (i,slice):
+         #   if isinstance (j,slice):
+            
+            
+        if isinstance (i,int):
+            for i in range(0,i):
+             print(self.data[i])
+             #   a=d.data[i][0];
 
 def read_csv(arch,sep=','):
     arch = open(arch)
@@ -19,15 +28,7 @@ def read_csv(arch,sep=','):
             data[titulos[i]].append(elem)
     return DataFrame(data)
 
-    def iloc(self,i,j):
-        #if isinstance (i,slice):
-         #   if isinstance (j,slice):
-            
-            
-        if isinstance (i,int):
-            for i in range(0,i):
-             print(datos[i]);
-             #   a=d.data[i][0];
+    
             
     
     
