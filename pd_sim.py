@@ -66,4 +66,9 @@ print(d.data)
 ## y le agrega un index en las filas
 
 def rowIndex(dic{})
-newIndex{1,dic{}}
+ dic{} = {'A': 1, 'B': 2, 'C': 3}
+
+    key, value = 'D', 4
+
+    dictionary.update({key: value})
+    print(dictionary)
