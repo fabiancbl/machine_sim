@@ -27,6 +27,12 @@ def read_csv(arch,sep=';'):
         for i,elem in enumerate(linea.split(sep)):
             data[titulos[i]].append(elem.strip())
     return DataFrame(data)           
+
+# Nicolas Arevalo 20202005024
+    #Crear el comando copy
+def copy(arch, sep= ';'):
+    arch = open(arch)
+
 #prueba
 d=read_csv('datos.csv')
 print(d.data)
