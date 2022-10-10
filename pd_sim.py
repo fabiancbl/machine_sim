@@ -27,7 +27,9 @@ d=read_csv('datos.csv')
 #x=sum(map(len,d.data.values()))
 #print(x)
 
-
+for c in d.data.keys():
+    print (d.data[c])
+    
 for t in d.data:
    print (t, ":", d.data[t])
    
