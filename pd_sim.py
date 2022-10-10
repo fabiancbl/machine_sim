@@ -6,6 +6,13 @@ class DataFrame:
         print('indice',indice)
         if isinstance(indice,slice):
             print('slice',indice.start,indice.step,indice.stop)
+    def iat(self,row,column):
+        a=self.data
+        b=a[row]
+        c=b[column]
+        print(c)
+        
+    
 
 def funcion_tail(arch, n,sep=';'):
 	with open(arch) as f:
@@ -51,3 +58,6 @@ print ("\n",funcion_tail("datos.csv",5))
 d=read_csv('datos.csv')
 print(d.data)
 
+#prueba Willian
+#d=read_csv('datos.csv')
+#print(d.data)
