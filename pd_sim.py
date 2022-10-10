@@ -33,7 +33,7 @@ def read_csv(arch,sep=';'):
 #prueba
 d=read_csv('datos.csv')
 print(d.data)
-listilla=_index_('datos.csv')
+#listilla=DataFrame._index_('datos.csv')
 
 #print(d[2])
 #print(d[3:9:2])
