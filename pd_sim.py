@@ -2,10 +2,15 @@ class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
         
+<<<<<<< HEAD
     def __getitem__(self, indice):
         print('indice',indice)
         if isinstance(indice,slice):
             print('slice',indice.start,indice.step,indice.stop)
+=======
+    def __getitem__(self,i):
+        print ("Indice: ",i) 
+>>>>>>> origin/JuanDavidR1028
 
 
 
