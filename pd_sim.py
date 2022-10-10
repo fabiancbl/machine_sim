@@ -51,7 +51,7 @@ print ("\n",funcion_tail("datos.csv",5))
 
 strA="".join(funcion_tail("datos.csv",5))
 
-
+print(strA)
 
 print(d.data)
 print(d[6])
