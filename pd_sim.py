@@ -19,5 +19,5 @@ def read_csv(arch,sep=','):
             
         
 #prueba
-#d=read_csv('datos.csv')
-#print(d.data)
+d=read_csv('datos.csv')
+print(d.data)
