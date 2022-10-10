@@ -12,6 +12,12 @@ class DataFrame:
         b=a[row]
         c=b[column]
         print(c)
+    def iloc(self, i, j):
+        if intance(i, j):
+            for i in range(0,i):
+        
+        
+        
         
 
             
