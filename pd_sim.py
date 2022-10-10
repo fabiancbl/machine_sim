@@ -6,7 +6,10 @@ class DataFrame:
         print('indice',indice)
         if isinstance(indice,slice):
             print('slice',indice.start,indice.step,indice.stop)
-
+    def head(arch, n, sep=';'):
+        with open(arch) as f:
+        lineas = [lineas.strip('\n') for lineas in f.readlines()]
+        return lineas[n:]
 
 
 def read_csv(arch,sep=','):
