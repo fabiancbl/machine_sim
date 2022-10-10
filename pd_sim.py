@@ -20,8 +20,10 @@ def read_csv(arch,sep=','):
             data[titulos[i]].append(elem.strip())
     return DataFrame(data)
 def loc(self,columna,fila=None): #Funcion encargada de localizar filas y columnas del documento e identificar si la entrada es un int,str o slice. Imprimiendo los datos.
-        dat=titulo
-        fila=titulo            
+        dat=self.data
+        fila=dat[titulos(0)]
+        dat[0]
+        return fila
         
 #prueba
 d=read_csv('datos.csv')
@@ -29,4 +31,3 @@ print(d.data)
 print(d[6])
 print(d[3:9:2])
 print(d[:])
-
