@@ -2,11 +2,11 @@ class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
         
-
     def __getitem__(self, indice):
         print('indice',indice)
         if isinstance(indice,slice):
             print('slice',indice.start,indice.step,indice.stop)
+
     def iat(self,row,column):
         a=self.data
         b=a[row]
@@ -79,4 +79,11 @@ print(d.data)
 print(d[6])
 print(d[3:9:2])
 print(d[:])
+
+            
+        
+#prueba
+d=read_csv('datos.csv')
+print(d.data)
+
 
