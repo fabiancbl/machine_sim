@@ -1,8 +1,18 @@
 class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
+        
 
-def funcion_tail(arch, n,sep=';'):
+    def __getitem__(self, indice):
+        print('indice',indice)
+        if isinstance(indice,slice):
+            print('slice',indice.start,indice.step,indice.stop)
+            
+def __getitem__(self,i):
+        print ("Indice: ",i) 
+ 
+ 
+def funcion_tail(arch, n):
 	with open(arch) as f:
 		lineas = [lineas.strip('\n') for lineas in f.readlines()]
 	return lineas[-n:]
@@ -24,15 +34,27 @@ def read_csv(arch,sep=';'):
     return DataFrame(data)           
 #prueba
 d=read_csv('datos.csv')
+
 #x=sum(map(len,d.data.values()))
 #print(x)
 
-for c in d.data.keys():
-    print (d.data[c])
-    
+
+
+
 for t in d.data:
    print (t, ":", d.data[t])
    
 
-  
-print ("\n",funcion_tail("datos.csv",5))  
+z=len(funcion_tail("datos.csv",5))
+
+print ("\n",funcion_tail("datos.csv",5))
+
+strA="".join(funcion_tail("datos.csv",5))
+
+
+
+print(d.data)
+print(d[6])
+print(d[3:9:2])
+print(d[:])
+
