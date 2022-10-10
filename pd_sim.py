@@ -6,10 +6,16 @@ class DataFrame:
         print('indice',indice)
         if isinstance(indice,slice):
             print('slice',indice.start,indice.step,indice.stop)
-
-
-
-def read_csv(arch,sep=','):
+    def _index_(arch):
+        arch = open(arch)
+        for i in arch.keys():
+            indice = arch.keys()
+            indices=[]
+            indices.append(indice)
+            return indices
+            
+            
+def read_csv(arch,sep=';'):
     arch = open(arch)
     linea=arch.readline()
     data={}
@@ -27,6 +33,8 @@ def read_csv(arch,sep=','):
 #prueba
 d=read_csv('datos.csv')
 print(d.data)
-print(d[2])
-print(d[3:9:2])
-print(d[:])
+listilla=_index_('datos.csv')
+
+#print(d[2])
+#print(d[3:9:2])
+#print(d[:])
