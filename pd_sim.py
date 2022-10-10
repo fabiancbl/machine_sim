@@ -95,7 +95,7 @@ def loc (columna,fila=None): #Función para seleccionar por etiquetas (loc), ide
 
     
 #prueba
-d=read_csv('datos.csv')
+d=read_csv('csv.csv')
 print(d.data)
 print(d[6])
 print(d[3:9:2])
