@@ -4,9 +4,11 @@ class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
         
-    def T(self):
+    def T(self,d):
+        # print("Hola Mundo"
+        print(d.data)
+        keys=dict.keys(d.data)
         
-        print("Hola Mundo")
 
 def read_csv(arch,sep=','):
     arch = open(arch)
@@ -37,6 +39,4 @@ def read_csv(arch,sep=','):
 #prueba
 
 d=read_csv('datos.csv')
-print(d.data)
-
-d.T()
+d.T(d)
