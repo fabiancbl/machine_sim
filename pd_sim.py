@@ -10,14 +10,17 @@ def read_csv(arch,sep=','):
     data={}
     titulos=[]
     for titulo in linea.split(sep):
+        titulo=titulo.strip()
         data[titulo]=[]
         titulos.append(titulo)
     for linea in arch.readlines():
         for i,elem in enumerate(linea.split(sep)):
-            data[titulos[i]].append(elem)
+            data[titulos[i]].append(elem.strip())
+    
     return DataFrame(data)
             
         
-#prueba
-#d=read_csv('datos.csv')
-#print(d.data)
+#pruebaaa
+d=read_csv('datos.csv')
+print(d.data)
+
