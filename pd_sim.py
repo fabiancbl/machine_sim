@@ -38,6 +38,27 @@ def funcion_tail(arch, n):
 
 
 def read_csv(arch, sep=';'):
+    def __init__(self, data, *args, **kwargs):
+        self.data = data
+
+    def __getitem__(self, indice):
+        print('indice', indice)
+        if isinstance(indice, slice):
+            print('slice', indice.start, indice.step, indice.stop)
+
+
+def funcion_crea_Archivo(arch, sep=','):
+    # esta funcion creara y guardara un nuevo archivo CSV con el mismo contenido.
+    pass
+
+
+def funcion_tail(arch, n, sep=';'):
+    with open(arch) as f:
+        lineas = [lineas.strip('\n') for lineas in f.readlines()]
+    return lineas[-n:]
+
+
+def read_csv(arch, sep=';'):
     arch = open(arch)
     linea = arch.readline()
     data = {}
@@ -55,7 +76,6 @@ def read_csv(arch, sep=';'):
 
 # prueba
 d = read_csv('datos.csv')
-print(d.data)
 print(d[6])
 print(d[3:9:2])
 print(d[:])
@@ -121,5 +141,18 @@ print(d[:])
 
 
 # prueba
+d = read_csv('datos.csv')
+print(d.data)
+for c in d.data.keys():
+    print(d.data[c])
+
+for t in d.data:
+    print(t, ":", d.data[t])
+
+
+print("\n", funcion_tail("datos.csv", 5))
+
+
+# pruebaaa
 d = read_csv('datos.csv')
 print(d.data)
