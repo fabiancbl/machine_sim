@@ -13,6 +13,17 @@ class DataFrame:
         c = b[column]
         print(c)
 
+    def head(arch, n, sep=';'):
+        with open(arch) as f:
+            lineas = [lineas.strip('\n') for lineas in f.readlines()]
+        return lineas[n:]
+
+    def iat(self, row, column):
+        a = self.data
+        b = a[row]
+        c = b[column]
+        print(c)
+
     def T(self, d):
         # print("Hola Mundo"
         print(d.data)
