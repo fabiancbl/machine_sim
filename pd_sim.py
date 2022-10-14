@@ -118,3 +118,8 @@ print(d[:])
 # print(d[2])
 # print(d[3:9:2])
 # print(d[:])
+
+
+# prueba
+d = read_csv('datos.csv')
+print(d.data)
