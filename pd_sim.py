@@ -57,6 +57,12 @@ def funcion_tail(arch, n, sep=';'):
     return lineas[-n:]
 
 
+def funcion_tail(arch, n, sep=';'):
+    with open(arch) as f:
+        lineas = [lineas.strip('\n') for lineas in f.readlines()]
+    return lineas[-n:]
+
+
 def read_csv(arch, sep=';'):
     arch = open(arch)
     linea = arch.readline()
@@ -133,6 +139,8 @@ def loc(columna, fila=None):
 
 
 # prueba
+# prueba
+d = read_csv('datos.csv')
 print(d.data)
 print(d[6])
 print(d[3:9:2])
@@ -164,3 +172,31 @@ print("\n", funcion_tail("datos.csv", 5))
 # pruebaaa
 d = read_csv('datos.csv')
 print(d.data)
+
+for t in d.data:
+    print(t, ":", d.data[t])
+
+
+print("\n", funcion_tail("datos.csv", 5))
+
+
+# pruebaaa
+d = read_csv('datos.csv')
+print(d.data)
+
+# prueba Willian
+# d=read_csv('datos.csv')
+# print(d.data)
+
+# creando el metodo que pide como parametro un diccionario
+# y le agrega un index en las filas
+
+
+# dic{} = {'A': 1, 'B': 2, 'C': 3}
+
+# key, value = 'D', 4
+# def rowIndex(dic{})
+
+
+# dictionary.update({key: value})
+# print(dictionary)
