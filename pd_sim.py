@@ -106,6 +106,15 @@ strA = "".join(funcion_tail("datos.csv", 5))
 
 print(strA)
 
+
+# Nicolas Arevalo 20202005024
+# Crear el comando copy
+def copy(arch, sep=';'):
+    arch = open(arch)
+
+
+# prueba
+d = read_csv('datos.csv')
 print(d.data)
 print(d[6])
 print(d[3:9:2])
