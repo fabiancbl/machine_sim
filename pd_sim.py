@@ -18,6 +18,14 @@ class DataFrame:
         #     for i in range(0,i):
         pass
 
+    def _index_(arch):
+        arch = open(arch)
+        for i in arch.keys():
+            indice = arch.keys()
+            indices = []
+            indices.append(indice)
+            return indices
+
 
 def __getitem__(self, i):
     print("Indice: ", i)
@@ -29,7 +37,7 @@ def funcion_tail(arch, n):
     return lineas[-n:]
 
 
-def read_csv(arch, sep=','):
+def read_csv(arch, sep=';'):
     arch = open(arch)
     linea = arch.readline()
     data = {}
@@ -91,8 +99,9 @@ print(d.data)
 
 # Función para seleccionar por etiquetas (loc), identificar filas y columnas identificando si es un str, int, slice.
 def loc(columna, fila=None):
-    dat = titulo
-    fila = titulo
+    pass
+    # dat = titulo
+    # fila = titulo
 
 
 # prueba
@@ -102,6 +111,11 @@ print(d[6])
 print(d[3:9:2])
 print(d[:])
 # print(d.data)
+# print(d[2])
+# print(d[3:9:2])
+# print(d[:])
+# listilla=DataFrame._index_('datos.csv')
+
 # print(d[2])
 # print(d[3:9:2])
 # print(d[:])
