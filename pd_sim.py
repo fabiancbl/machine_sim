@@ -1,3 +1,5 @@
+import numpy as np
+
 class DataFrame:
     def __init__(self, data, *args, **kwargs):
         self.data = data
@@ -12,6 +14,12 @@ class DataFrame:
         b = a[row]
         c = b[column]
         print(c)
+
+    def T(self,d):
+        # print("Hola Mundo"
+        print(d.data)
+        keys=dict.keys(d.data)
+        
 
     def iloc(self, i, j):
         # if intance(i, j):
@@ -200,3 +208,20 @@ print(d.data)
 
 # dictionary.update({key: value})
 # print(dictionary)
+# d1 = {
+#   "Nombre": "Sara",
+#   "Edad": 27,
+#   "Documento": 1003882
+# }
+
+# df=pd.DataFrame()
+# nombres = ['Juan', 'Laura', 'Pepe']
+# edades = [42, 40, 37]
+# df['Nombre'] = nombres
+# df['Edad'] = edades
+# print(df)
+
+#prueba
+
+d=read_csv('datos.csv')
+d.T(d)
