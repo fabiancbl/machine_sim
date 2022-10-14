@@ -105,7 +105,6 @@ def loc(columna, fila=None):
 
 
 # prueba
-d = read_csv('csv.csv')
 print(d.data)
 print(d[6])
 print(d[3:9:2])
