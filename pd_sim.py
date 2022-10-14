@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class DataFrame:
     def __init__(self, data, *args, **kwargs):
         self.data = data
@@ -15,16 +16,21 @@ class DataFrame:
         c = b[column]
         print(c)
 
-    def T(self,d):
+    def T(self, d):
         # print("Hola Mundo"
         print(d.data)
-        keys=dict.keys(d.data)
-        
+        keys = dict.keys(d.data)
 
-    def iloc(self, i, j):
-        # if intance(i, j):
-        #     for i in range(0,i):
-        pass
+    # Realizar lecturas según su posición
+    def iloc(self, i):
+        # if isinstance (i,slice):
+        #   if isinstance (j,slice):
+
+        if isinstance(i, int):
+            titulos = self.data.keys()
+            # for i in range(0,i):
+            # print(self.data[i])
+            #   a=d.data[i][0];
 
     def _index_(arch):
         arch = open(arch)
@@ -71,7 +77,7 @@ def funcion_tail(arch, n, sep=';'):
     return lineas[-n:]
 
 
-def read_csv(arch, sep=';'):
+def read_csv(arch, sep=','):
     arch = open(arch)
     linea = arch.readline()
     data = {}
@@ -80,10 +86,9 @@ def read_csv(arch, sep=';'):
         titulo = titulo.strip()
         data[titulo] = []
         titulos.append(titulo)
-
     for linea in arch.readlines():
         for i, elem in enumerate(linea.split(sep)):
-            data[titulos[i]].append(elem.strip())
+            data[titulos[i]].append(elem)
     return DataFrame(data)
 
 
@@ -221,7 +226,22 @@ print(d.data)
 # df['Edad'] = edades
 # print(df)
 
-#prueba
+# prueba
 
-d=read_csv('datos.csv')
+d = read_csv('datos.csv')
 d.T(d)
+
+
+d = read_csv("datos.csv")
+# d=DataFrame([1,'a','b','c',8,9,10])
+print(d.data)
+d.iloc(5)
+
+
+#                   A         B         C         D
+# 2013-01-01  0.469112 -0.282863 -1.509059 -1.135632
+# 2013-01-02  1.212112 -0.173215  0.119209 -1.044236
+# 2013-01-03 -0.861849 -2.104569 -0.494929  1.071804
+# *2013-01-04  0.721555 -0.706771 -1.039575  0.271860
+# 2013-01-05 -0.424972  0.567020  0.276232 -1.087401
+# 2013-01-06 -0.673690  0.113648 -1.478427  0.524988
