@@ -30,15 +30,15 @@ class DataFrame:
         keys = dict.keys(d.data)
 
     # Realizar lecturas según su posición
-    def iloc(self, i):
-        # if isinstance (i,slice):
-        #   if isinstance (j,slice):
+    def iloc(self, i):  # Se debe crear la funcion iloc para el funcionamiento, de leer los datos segun su posicion
+        if isinstance(i, slice):
+            # if isinstance (j,slice):
+            pass
 
         if isinstance(i, int):
-            titulos = self.data.keys()
-            # for i in range(0,i):
-            # print(self.data[i])
-            #   a=d.data[i][0];
+            for i in range(0, i):
+                print(self.data[i])
+                a = d.data[i][0]
 
     def _index_(arch):
         arch = open(arch)
@@ -141,14 +141,17 @@ def copy(arch, sep=';'):
 
 # prueba
 
-def loc(self,columna,fila=None): #Funcion encargada de localizar filas y columnas del documento e identificar si la entrada es un int,str o slice. Imprimiendo los datos.
-        dat=self.data
-        # fila=dat[titulos(0)]
-        dat[0]
-        return fila
-        
-#prueba
-d=read_csv('datos.csv')
+# Funcion encargada de localizar filas y columnas del documento e identificar si la entrada es un int,str o slice. Imprimiendo los datos.
+def loc(self, columna, fila=None):
+    dat = self.data
+    # fila=dat[titulos(0)]
+    dat[0]
+    return fila
+
+
+# prueba
+# Se crearon los datos en formato csv para la lectura de los mismos
+d = read_csv('datos.csv')
 print(d.data)
 print(d[6])
 print(d[3:9:2])
@@ -261,3 +264,5 @@ d.iloc(5)
 # *2013-01-04  0.721555 -0.706771 -1.039575  0.271860
 # 2013-01-05 -0.424972  0.567020  0.276232 -1.087401
 # 2013-01-06 -0.673690  0.113648 -1.478427  0.524988
+titulos = d.keys()
+valor = datos[titulos[0]]
