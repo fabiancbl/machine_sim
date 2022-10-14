@@ -7,6 +7,17 @@ class DataFrame:
         if isinstance(indice, slice):
             print('slice', indice.start, indice.step, indice.stop)
 
+    def _index_(arch):
+        arch = open(arch)
+        for i in arch.keys():
+            indice = arch.keys()
+            indices = []
+            indices.append(indice)
+            return indices
+
+    def __setitem__(indice, valor):
+        pass
+
     def iat(self, row, column):
         a = self.data
         b = a[row]
@@ -17,12 +28,6 @@ class DataFrame:
         with open(arch) as f:
             lineas = [lineas.strip('\n') for lineas in f.readlines()]
         return lineas[n:]
-
-    def iat(self, row, column):
-        a = self.data
-        b = a[row]
-        c = b[column]
-        print(c)
 
     def T(self, d):
         # print("Hola Mundo"
@@ -40,50 +45,6 @@ class DataFrame:
                 print(self.data[i])
                 a = d.data[i][0]
 
-    def _index_(arch):
-        arch = open(arch)
-        for i in arch.keys():
-            indice = arch.keys()
-            indices = []
-            indices.append(indice)
-            return indices
-
-    def _setitem_(indice, valor):
-        pass
-
-
-def funcion_tail(arch, n):
-    with open(arch) as f:
-        lineas = [lineas.strip('\n') for lineas in f.readlines()]
-    return lineas[-n:]
-
-
-def read_csv(arch, sep=';'):
-    def __init__(self, data, *args, **kwargs):
-        self.data = data
-
-    def __getitem__(self, indice):
-        print('indice', indice)
-        if isinstance(indice, slice):
-            print('slice', indice.start, indice.step, indice.stop)
-
-
-def funcion_crea_Archivo(arch, sep=','):
-    # esta funcion creara y guardara un nuevo archivo CSV con el mismo contenido.
-    pass
-
-
-def funcion_tail(arch, n, sep=';'):
-    with open(arch) as f:
-        lineas = [lineas.strip('\n') for lineas in f.readlines()]
-    return lineas[-n:]
-
-
-def funcion_tail(arch, n, sep=';'):
-    with open(arch) as f:
-        lineas = [lineas.strip('\n') for lineas in f.readlines()]
-    return lineas[-n:]
-
 
 def read_csv(arch, sep=','):
     arch = open(arch)
@@ -96,8 +57,41 @@ def read_csv(arch, sep=','):
         titulos.append(titulo)
     for linea in arch.readlines():
         for i, elem in enumerate(linea.split(sep)):
-            data[titulos[i]].append(elem)
+            data[titulos[i]].append(elem.strip())
     return DataFrame(data)
+
+
+def funcion_tail(arch, n):
+    with open(arch) as f:
+        lineas = [lineas.strip('\n') for lineas in f.readlines()]
+    return lineas[-n:]
+
+
+def funcion_crea_Archivo(arch, sep=','):
+    # esta funcion creara y guardara un nuevo archivo CSV con el mismo contenido.
+    pass
+
+
+def funcion_tail(arch, n, sep=';'):
+    with open(arch) as f:
+        lineas = [lineas.strip('\n') for lineas in f.readlines()]
+    return lineas[-n:]
+
+# Nicolas Arevalo 20202005024
+# Crear el comando copy
+
+
+def copy(arch, sep=';'):
+    arch = open(arch)
+
+# Funcion encargada de localizar filas y columnas del documento e identificar si la entrada es un int,str o slice. Imprimiendo los datos.
+
+
+def loc(self, columna, fila=None):
+    dat = self.data
+    # fila=dat[titulos(0)]
+    dat[0]
+    return fila
 
 
 # prueba
@@ -133,20 +127,7 @@ strA = "".join(funcion_tail("datos.csv", 5))
 print(strA)
 
 
-# Nicolas Arevalo 20202005024
-# Crear el comando copy
-def copy(arch, sep=';'):
-    arch = open(arch)
-
-
 # prueba
-
-# Funcion encargada de localizar filas y columnas del documento e identificar si la entrada es un int,str o slice. Imprimiendo los datos.
-def loc(self, columna, fila=None):
-    dat = self.data
-    # fila=dat[titulos(0)]
-    dat[0]
-    return fila
 
 
 # prueba
@@ -161,13 +142,6 @@ print(d[:])
 # prueba
 d = read_csv('datos.csv')
 print(d.data)
-
-
-# Función para seleccionar por etiquetas (loc), identificar filas y columnas identificando si es un str, int, slice.
-def loc(columna, fila=None):
-    pass
-    # dat = titulo
-    # fila = titulo
 
 
 # prueba
@@ -254,7 +228,7 @@ d.T(d)
 d = read_csv("datos.csv")
 # d=DataFrame([1,'a','b','c',8,9,10])
 print(d.data)
-d.iloc(5)
+# d.iloc(5)
 
 
 #                   A         B         C         D
@@ -264,5 +238,5 @@ d.iloc(5)
 # *2013-01-04  0.721555 -0.706771 -1.039575  0.271860
 # 2013-01-05 -0.424972  0.567020  0.276232 -1.087401
 # 2013-01-06 -0.673690  0.113648 -1.478427  0.524988
-titulos = d.keys()
-valor = datos[titulos[0]]
+titulos = d.data.keys()
+# valor = datos[titulos[0]]
