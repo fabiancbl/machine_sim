@@ -26,9 +26,8 @@ class DataFrame:
             indices.append(indice)
             return indices
 
-
-def __getitem__(self, i):
-    print("Indice: ", i)
+    def _setitem_(indice, valor):
+        pass
 
 
 def funcion_tail(arch, n):
