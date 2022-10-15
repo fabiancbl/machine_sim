@@ -6,15 +6,35 @@ class DataFrame:
         if isinstance(i,slice):
             print("slice",i.start,i.stop,i.step)
     #Realizar lecturas según su posición
-    def iloc(self,i):
-        #if isinstance (i,slice):
-         #   if isinstance (j,slice):
-            
-            
+    #def iloc(self,i,j):
+     #   print("hola")
+     
+     
+     
+    def iloc(self,i,j):
+        
+        if isinstance(i,slice):
+            if isinstance (j,slice):
+                print("Indice: ",i)
+                print("slice",i.start,i.stop,i.step)
+
         if isinstance (i,int):
+            print("entero")
             titulos=self.data.keys()
-            #for i in range(0,i):
-             #print(self.data[i])
+            datos=self.data
+            #a=datos(titulos[0])
+            #print(a)
+           # print(datos)
+            #a=datos[0]
+            #for j in range (len(titulos)):
+             #   imprimir[j]=list(datos[1])
+            #print(titulos)
+           # print(a[0])
+           # for j in range(len(titulos)):
+                #print(titulos[j])
+                #print(datos[i])
+              
+                 
              #   a=d.data[i][0];
 
 def read_csv(arch,sep=','):
@@ -34,11 +54,12 @@ def read_csv(arch,sep=','):
             
     
     
-        
-d=read_csv("datos.csv")    
+datos="hola.csv"       
+d=read_csv(datos)
 #d=DataFrame([1,'a','b','c',8,9,10])
 print(d.data)
-d.iloc(5)
+
+d.iloc(5,0)
 
 
 
