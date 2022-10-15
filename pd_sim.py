@@ -13,6 +13,7 @@ class DataFrame:
             
         if isinstance (i,int):
             titulos=self.data.keys()
+            valores=self.data[titulos[i]]
             #for i in range(0,i):
              #print(self.data[i])
              #   a=d.data[i][0];
