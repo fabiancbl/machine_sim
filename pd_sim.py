@@ -20,8 +20,8 @@ class DataFrame:
                 print(titulos)
                 print (valores)
             
-            #for i in range(0,i):
-             #print(self.data[i])
+            for i in range(0,i):
+             print(self.data[i])
 
             datos=self.data
             #a=datos(titulos[0])
