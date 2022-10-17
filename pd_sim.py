@@ -1,6 +1,7 @@
 class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
+
     def __getitem__(self,i):
         print("Indice: ",i)
         if isinstance(i,slice):
@@ -10,15 +11,17 @@ class DataFrame:
 
     def iloc(self,i):
 
+        
+        if isinstance(i,slice):
+            print("hola")
         if isinstance (i,int):
-            print("entero")
-            titulos=self.data.keys()
-            for j in titulos:
-                valores=self.data[j]
-                print ("Titulo: ", j)
-                print("Dato solicitado: ",valores[i])
-                print("\n")
-
+                    print("entero")
+                    titulos=self.data.keys()
+                    for j in titulos:
+                        valores=self.data[j]
+                        print ("Titulo: ", j)
+                        print("Dato solicitado: ",valores[i])
+                        print("\n")
 
 def read_csv(arch,sep=','):
     arch = open(arch)
@@ -40,10 +43,13 @@ def read_csv(arch,sep=','):
 datos="hola.csv"       
 d=read_csv(datos)
 #d=DataFrame([1,'a','b','c',8,9,10])
-print(d.data)
-d.iloc(1)
+#print(d.data)
 
-#d.iloc(5,0)
+try:
+    d.iloc[5:8]
+except:
+    print("hola22")
+
 
 
 
