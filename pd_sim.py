@@ -2,6 +2,9 @@ class DataFrame:
     def __init__(self, data, *args, **kwargs):
         self.data = data
 
+    def __str__(self):
+        return str(self.data)
+
     def __getitem__(self, indice):
         print('indice', indice)
         if isinstance(indice, slice):
@@ -94,149 +97,149 @@ def loc(self, columna, fila=None):
     return fila
 
 
-# prueba
-d = read_csv('datos.csv')
-print(d[6])
-print(d[3:9:2])
-print(d[:])
-
-# x=sum(map(len,d.data.values()))
-# print(x)
-
-
-for t in d.data:
-    print(t, ":", d.data[t])
-
-
-print("\n", funcion_tail("datos.csv", 5))
-
-
-# pruebaaa
-d = read_csv('datos.csv')
-print(d.data)
-
-# prueba Willian
-# d=read_csv('datos.csv')
-# print(d.data)
-z = len(funcion_tail("datos.csv", 5))
-
-print("\n", funcion_tail("datos.csv", 5))
-
-strA = "".join(funcion_tail("datos.csv", 5))
-
-print(strA)
-
-
-# prueba
-
-
-# prueba
-# Se crearon los datos en formato csv para la lectura de los mismos
-d = read_csv('datos.csv')
-print(d.data)
-print(d[6])
-print(d[3:9:2])
-print(d[:])
-
-
-# prueba
-d = read_csv('datos.csv')
-print(d.data)
-
-
-# prueba
-# prueba
-d = read_csv('datos.csv')
-print(d.data)
-print(d[6])
-print(d[3:9:2])
-print(d[:])
-# print(d.data)
-# print(d[2])
+# # prueba
+# d = read_csv('datos.csv')
+# print(d[6])
 # print(d[3:9:2])
 # print(d[:])
-# listilla=DataFrame._index_('datos.csv')
 
-# print(d[2])
+# # x=sum(map(len,d.data.values()))
+# # print(x)
+
+
+# for t in d.data:
+#     print(t, ":", d.data[t])
+
+
+# print("\n", funcion_tail("datos.csv", 5))
+
+
+# # pruebaaa
+# d = read_csv('datos.csv')
+# print(d.data)
+
+# # prueba Willian
+# # d=read_csv('datos.csv')
+# # print(d.data)
+# z = len(funcion_tail("datos.csv", 5))
+
+# print("\n", funcion_tail("datos.csv", 5))
+
+# strA = "".join(funcion_tail("datos.csv", 5))
+
+# print(strA)
+
+
+# # prueba
+
+
+# # prueba
+# # Se crearon los datos en formato csv para la lectura de los mismos
+# d = read_csv('datos.csv')
+# print(d.data)
+# print(d[6])
 # print(d[3:9:2])
 # print(d[:])
 
 
-# prueba
-d = read_csv('datos.csv')
-print(d.data)
-for c in d.data.keys():
-    print(d.data[c])
-
-for t in d.data:
-    print(t, ":", d.data[t])
-
-
-print("\n", funcion_tail("datos.csv", 5))
-
-
-# pruebaaa
-d = read_csv('datos.csv')
-print(d.data)
-
-for t in d.data:
-    print(t, ":", d.data[t])
-
-
-print("\n", funcion_tail("datos.csv", 5))
-
-
-# pruebaaa
-d = read_csv('datos.csv')
-print(d.data)
-
-# prueba Willian
-# d=read_csv('datos.csv')
+# # prueba
+# d = read_csv('datos.csv')
 # print(d.data)
 
-# creando el metodo que pide como parametro un diccionario
-# y le agrega un index en las filas
+
+# # prueba
+# # prueba
+# d = read_csv('datos.csv')
+# print(d.data)
+# print(d[6])
+# print(d[3:9:2])
+# print(d[:])
+# # print(d.data)
+# # print(d[2])
+# # print(d[3:9:2])
+# # print(d[:])
+# # listilla=DataFrame._index_('datos.csv')
+
+# # print(d[2])
+# # print(d[3:9:2])
+# # print(d[:])
 
 
-# dic{} = {'A': 1, 'B': 2, 'C': 3}
+# # prueba
+# d = read_csv('datos.csv')
+# print(d.data)
+# for c in d.data.keys():
+#     print(d.data[c])
 
-# key, value = 'D', 4
-# def rowIndex(dic{})
-
-
-# dictionary.update({key: value})
-# print(dictionary)
-# d1 = {
-#   "Nombre": "Sara",
-#   "Edad": 27,
-#   "Documento": 1003882
-# }
-
-# df=pd.DataFrame()
-# nombres = ['Juan', 'Laura', 'Pepe']
-# edades = [42, 40, 37]
-# df['Nombre'] = nombres
-# df['Edad'] = edades
-# print(df)
-
-# prueba
-
-d = read_csv('datos.csv')
-d.T(d)
+# for t in d.data:
+#     print(t, ":", d.data[t])
 
 
-d = read_csv("datos.csv")
-# d=DataFrame([1,'a','b','c',8,9,10])
-print(d.data)
-# d.iloc(5)
+# print("\n", funcion_tail("datos.csv", 5))
 
 
-#                   A         B         C         D
-# 2013-01-01  0.469112 -0.282863 -1.509059 -1.135632
-# 2013-01-02  1.212112 -0.173215  0.119209 -1.044236
-# 2013-01-03 -0.861849 -2.104569 -0.494929  1.071804
-# *2013-01-04  0.721555 -0.706771 -1.039575  0.271860
-# 2013-01-05 -0.424972  0.567020  0.276232 -1.087401
-# 2013-01-06 -0.673690  0.113648 -1.478427  0.524988
-titulos = d.data.keys()
-# valor = datos[titulos[0]]
+# # pruebaaa
+# d = read_csv('datos.csv')
+# print(d.data)
+
+# for t in d.data:
+#     print(t, ":", d.data[t])
+
+
+# print("\n", funcion_tail("datos.csv", 5))
+
+
+# # pruebaaa
+# d = read_csv('datos.csv')
+# print(d.data)
+
+# # prueba Willian
+# # d=read_csv('datos.csv')
+# # print(d.data)
+
+# # creando el metodo que pide como parametro un diccionario
+# # y le agrega un index en las filas
+
+
+# # dic{} = {'A': 1, 'B': 2, 'C': 3}
+
+# # key, value = 'D', 4
+# # def rowIndex(dic{})
+
+
+# # dictionary.update({key: value})
+# # print(dictionary)
+# # d1 = {
+# #   "Nombre": "Sara",
+# #   "Edad": 27,
+# #   "Documento": 1003882
+# # }
+
+# # df=pd.DataFrame()
+# # nombres = ['Juan', 'Laura', 'Pepe']
+# # edades = [42, 40, 37]
+# # df['Nombre'] = nombres
+# # df['Edad'] = edades
+# # print(df)
+
+# # prueba
+
+# d = read_csv('datos.csv')
+# d.T(d)
+
+
+# d = read_csv("datos.csv")
+# # d=DataFrame([1,'a','b','c',8,9,10])
+# print(d.data)
+# # d.iloc(5)
+
+
+# #                   A         B         C         D
+# # 2013-01-01  0.469112 -0.282863 -1.509059 -1.135632
+# # 2013-01-02  1.212112 -0.173215  0.119209 -1.044236
+# # 2013-01-03 -0.861849 -2.104569 -0.494929  1.071804
+# # *2013-01-04  0.721555 -0.706771 -1.039575  0.271860
+# # 2013-01-05 -0.424972  0.567020  0.276232 -1.087401
+# # 2013-01-06 -0.673690  0.113648 -1.478427  0.524988
+# titulos = d.data.keys()
+# # valor = datos[titulos[0]]
