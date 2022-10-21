@@ -11,9 +11,10 @@ class DataFrame:
             for k in titulos:
                 valores=self.data[k]
                 if (l>=j[1].start)&(l<j[1].stop):
-                    print("Titulo: ",k)
+                    print("\nTitulo: ",k)
                     for g in range(j[0].start,j[0].stop):
                         print("Dato solicitado ",g,": ",valores[g])
+
                 l=l+1
            # print("slice",j[0].start,j[0].stop,j[0].step)
      
@@ -24,15 +25,15 @@ class DataFrame:
 
         
         if isinstance(i,slice):
-            print("hola")
+            print("lo logramos")
         if isinstance (i,int):
-                    print("entero")
+
                     titulos=self.data.keys()
                     for j in titulos:
                         valores=self.data[j]
-                        print ("Titulo: ", j)
+                        print ("\nTitulo: ", j)
                         print("Dato solicitado: ",valores[i])
-                        print("\n")
+
 
 def read_csv(arch,sep=','):
     arch = open(arch)
@@ -53,14 +54,8 @@ def read_csv(arch,sep=','):
     
 datos="hola.csv"       
 d=read_csv(datos)
-#d=DataFrame([1,'a','b','c',8,9,10])
-#print(d.data)
-#try:
- #   d.iloc[5:8]
-#except:
-#    print("hola22")
-
-d[3:5,0:2]
+d.iloc(4)
+#d[3:5,0:2]
 
 
 
