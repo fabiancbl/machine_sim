@@ -49,6 +49,76 @@ class DataFrame:
                 a = d.data[i][0]
 
 
+    def funcion_tail(arch, n):
+        with open(arch) as f:
+            lineas = [lineas.strip('\n') for lineas in f.readlines()]
+        return lineas[-n:]
+
+
+    def funcion_crea_Archivo(arch, sep=','):
+        # esta funcion creara y guardara un nuevo archivo CSV con el mismo contenido.
+        pass
+
+
+    def funcion_tail(arch, n, sep=';'):
+        with open(arch) as f:
+            lineas = [lineas.strip('\n') for lineas in f.readlines()]
+        return lineas[-n:]
+
+    # Nicolas Arevalo 20202005024
+    # Crear el comando copy
+
+
+    def copy(arch, sep=';'):
+        arch = open(arch)
+
+    # Funcion encargada de localizar filas y columnas del documento e identificar si la entrada es un int,str o slice. Imprimiendo los datos.
+
+
+    def loc(self, columna, fila=None):
+        dat = self.data
+        # fila=dat[titulos(0)]
+        dat[0]
+        return fila
+
+    def __neg__(self):
+        '''
+        Gerardo Muñoz
+        Crea un nuevo DataFrame con cada elemento negado
+        uso: df2 = -df 
+        '''
+
+        # recupera el diccionario del este DataFrame 
+        diccionario = self.data
+        diccionario_nuevo = {}
+
+
+        # niega cada elemento del diccionario (si se puede)
+        llaves = diccionario.keys()
+
+        for llave in llaves:
+            lista = diccionario[llave]
+            lista_nueva = []
+
+            diccionario_nuevo[llave] = []
+            for elemento in lista:
+                try:
+                    elemento_nuevo = - elemento
+                except Exception as e:
+                    elemento_nuevo = elemento
+                    print('__neg__.error:',e)
+                lista_nueva.append(elemento_nuevo)
+
+            diccionario_nuevo[llave]=lista_nueva
+        return DataFrame(diccionario_nuevo)
+
+
+
+
+
+
+
+
 def read_csv(arch, sep=','):
     arch = open(arch)
     linea = arch.readline()
@@ -59,187 +129,15 @@ def read_csv(arch, sep=','):
         data[titulo] = []
         titulos.append(titulo)
     for linea in arch.readlines():
-        for i, elem in enumerate(linea.split(sep)):
-            data[titulos[i]].append(elem.strip())
+        for i, elem_str in enumerate(linea.split(sep)):
+            try:
+                elem = int(elem_str)
+            except:
+                try: 
+                    elem = float(elem_str)
+                except:
+                    elem=elem_str.strip()
+
+            data[titulos[i]].append(elem)
     return DataFrame(data)
 
-
-def funcion_tail(arch, n):
-    with open(arch) as f:
-        lineas = [lineas.strip('\n') for lineas in f.readlines()]
-    return lineas[-n:]
-
-
-def funcion_crea_Archivo(arch, sep=','):
-    # esta funcion creara y guardara un nuevo archivo CSV con el mismo contenido.
-    pass
-
-
-def funcion_tail(arch, n, sep=';'):
-    with open(arch) as f:
-        lineas = [lineas.strip('\n') for lineas in f.readlines()]
-    return lineas[-n:]
-
-# Nicolas Arevalo 20202005024
-# Crear el comando copy
-
-
-def copy(arch, sep=';'):
-    arch = open(arch)
-
-# Funcion encargada de localizar filas y columnas del documento e identificar si la entrada es un int,str o slice. Imprimiendo los datos.
-
-
-def loc(self, columna, fila=None):
-    dat = self.data
-    # fila=dat[titulos(0)]
-    dat[0]
-    return fila
-
-
-# # prueba
-# d = read_csv('datos.csv')
-# print(d[6])
-# print(d[3:9:2])
-# print(d[:])
-
-# # x=sum(map(len,d.data.values()))
-# # print(x)
-
-
-# for t in d.data:
-#     print(t, ":", d.data[t])
-
-
-# print("\n", funcion_tail("datos.csv", 5))
-
-
-# # pruebaaa
-# d = read_csv('datos.csv')
-# print(d.data)
-
-# # prueba Willian
-# # d=read_csv('datos.csv')
-# # print(d.data)
-# z = len(funcion_tail("datos.csv", 5))
-
-# print("\n", funcion_tail("datos.csv", 5))
-
-# strA = "".join(funcion_tail("datos.csv", 5))
-
-# print(strA)
-
-
-# # prueba
-
-
-# # prueba
-# # Se crearon los datos en formato csv para la lectura de los mismos
-# d = read_csv('datos.csv')
-# print(d.data)
-# print(d[6])
-# print(d[3:9:2])
-# print(d[:])
-
-
-# # prueba
-# d = read_csv('datos.csv')
-# print(d.data)
-
-
-# # prueba
-# # prueba
-# d = read_csv('datos.csv')
-# print(d.data)
-# print(d[6])
-# print(d[3:9:2])
-# print(d[:])
-# # print(d.data)
-# # print(d[2])
-# # print(d[3:9:2])
-# # print(d[:])
-# # listilla=DataFrame._index_('datos.csv')
-
-# # print(d[2])
-# # print(d[3:9:2])
-# # print(d[:])
-
-
-# # prueba
-# d = read_csv('datos.csv')
-# print(d.data)
-# for c in d.data.keys():
-#     print(d.data[c])
-
-# for t in d.data:
-#     print(t, ":", d.data[t])
-
-
-# print("\n", funcion_tail("datos.csv", 5))
-
-
-# # pruebaaa
-# d = read_csv('datos.csv')
-# print(d.data)
-
-# for t in d.data:
-#     print(t, ":", d.data[t])
-
-
-# print("\n", funcion_tail("datos.csv", 5))
-
-
-# # pruebaaa
-# d = read_csv('datos.csv')
-# print(d.data)
-
-# # prueba Willian
-# # d=read_csv('datos.csv')
-# # print(d.data)
-
-# # creando el metodo que pide como parametro un diccionario
-# # y le agrega un index en las filas
-
-
-# # dic{} = {'A': 1, 'B': 2, 'C': 3}
-
-# # key, value = 'D', 4
-# # def rowIndex(dic{})
-
-
-# # dictionary.update({key: value})
-# # print(dictionary)
-# # d1 = {
-# #   "Nombre": "Sara",
-# #   "Edad": 27,
-# #   "Documento": 1003882
-# # }
-
-# # df=pd.DataFrame()
-# # nombres = ['Juan', 'Laura', 'Pepe']
-# # edades = [42, 40, 37]
-# # df['Nombre'] = nombres
-# # df['Edad'] = edades
-# # print(df)
-
-# # prueba
-
-# d = read_csv('datos.csv')
-# d.T(d)
-
-
-# d = read_csv("datos.csv")
-# # d=DataFrame([1,'a','b','c',8,9,10])
-# print(d.data)
-# # d.iloc(5)
-
-
-# #                   A         B         C         D
-# # 2013-01-01  0.469112 -0.282863 -1.509059 -1.135632
-# # 2013-01-02  1.212112 -0.173215  0.119209 -1.044236
-# # 2013-01-03 -0.861849 -2.104569 -0.494929  1.071804
-# # *2013-01-04  0.721555 -0.706771 -1.039575  0.271860
-# # 2013-01-05 -0.424972  0.567020  0.276232 -1.087401
-# # 2013-01-06 -0.673690  0.113648 -1.478427  0.524988
-# titulos = d.data.keys()
-# # valor = datos[titulos[0]]

@@ -87,3 +87,9 @@ print(data_frame1_a)
 #data_frame2['Est_act'] = 0
 #print(data_frame2)
 
+print('Función negar -, Gerardo Muñoz')
+
+print(-data_frame1)
+print(-data_frame2)
+
+print()
