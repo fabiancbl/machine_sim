@@ -3,9 +3,20 @@ class DataFrame:
         self.data=data
 
     def __getitem__(self,i):
-        print("Indice: ",i)
-        if isinstance(i,slice):
-            print("slice",i.start,i.stop,i.step)
+        j=list(i)
+        l=0
+        g=0
+        if isinstance(j[0],slice):
+            titulos=self.data.keys()
+            for k in titulos:
+                valores=self.data[k]
+                if (l>=j[1].start)&(l<j[1].stop):
+                    print("Titulo: ",k)
+                    for g in range(j[0].start,j[0].stop):
+                        print("Dato solicitado ",g,": ",valores[g])
+                l=l+1
+           # print("slice",j[0].start,j[0].stop,j[0].step)
+     
             
     #Realizar lecturas según su posición
 
@@ -44,13 +55,12 @@ datos="hola.csv"
 d=read_csv(datos)
 #d=DataFrame([1,'a','b','c',8,9,10])
 #print(d.data)
+#try:
+ #   d.iloc[5:8]
+#except:
+#    print("hola22")
 
-try:
-    d.iloc[5:8]
-except:
-    print("hola22")
-
-
+d[3:5,0:2]
 
 
 
