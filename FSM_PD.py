@@ -6,8 +6,10 @@ nombre_archivo = 'FSM_dosUnosSeguidos.csv'
 data_frame1 = pd1.read_csv(nombre_archivo)
 data_frame2 = pd2.read_csv(nombre_archivo)
 
-print(data_frame1)
+#print(data_frame1)
 print(data_frame2)
+
+raise
 
 print()
 
