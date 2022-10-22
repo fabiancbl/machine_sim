@@ -1,6 +1,6 @@
 seleccion_titulo=[]
 seleccion_valor=[]
-ñ=0
+
 class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
@@ -11,6 +11,8 @@ class DataFrame:
         g=0
         if isinstance(j[0],slice):
             titulos=self.data.keys()
+            seleccion_titulo.clear()
+            seleccion_valor.clear()
             for k in titulos:
                 valores=self.data[k]
                 if (l>=j[1].start)&(l<j[1].stop):
@@ -21,7 +23,6 @@ class DataFrame:
                         print("Dato solicitado ",g,": ",valores[g])
 
                 l=l+1
-           # print("slice",j[0].start,j[0].stop,j[0].step)
      
             
     #Realizar lecturas según su posición
