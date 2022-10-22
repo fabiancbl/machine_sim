@@ -1,3 +1,6 @@
+seleccion_titulo=[]
+seleccion_valor=[]
+
 class DataFrame:
     def __init__(self, data, *args, **kwargs):
         self.data = data
@@ -5,11 +8,7 @@ class DataFrame:
     def __str__(self):
         return str(self.data)
 
-    def __getitem__(self, indice):
-        print('indice', indice)
-        if isinstance(indice, slice):
-            print('slice', indice.start, indice.step, indice.stop)
-
+    
     def _index_(arch):
         arch = open(arch)
         for i in arch.keys():
@@ -37,16 +36,6 @@ class DataFrame:
         print(d.data)
         keys = dict.keys(d.data)
 
-    # Realizar lecturas según su posición
-    def iloc(self, i):  # Se debe crear la funcion iloc para el funcionamiento, de leer los datos segun su posicion
-        if isinstance(i, slice):
-            # if isinstance (j,slice):
-            pass
-
-        if isinstance(i, int):
-            for i in range(0, i):
-                print(self.data[i])
-                a = d.data[i][0]
 
 
     def funcion_tail(arch, n):
@@ -67,6 +56,46 @@ class DataFrame:
 
     # Nicolas Arevalo 20202005024
     # Crear el comando copy
+
+
+    def __getitem__(self,i):
+        j=list(i)
+        l=0
+        g=0
+        if isinstance(j[0],slice):
+            titulos=self.data.keys()
+            seleccion_titulo.clear()
+            seleccion_valor.clear()
+            for k in titulos:
+                valores=self.data[k]
+                if (l>=j[1].start)&(l<j[1].stop):
+                    seleccion_titulo.append(k)
+                    print("\nTitulo: ",k)
+                    for g in range(j[0].start,j[0].stop):
+                        seleccion_valor.append(valores[g])
+                        print("Dato solicitado ",g,": ",valores[g])
+
+                l=l+1
+     
+            
+    #Realizar lecturas según su posición
+
+    def iloc(self,i):
+        
+        if isinstance(i,slice):
+            print("lo logramos")
+        if isinstance (i,int):
+            seleccion_titulo.clear()
+            seleccion_valor.clear()
+            titulos=self.data.keys()
+            for j in titulos:
+                valores=self.data[j]
+                seleccion_titulo.append(j)
+                print ("\nTitulo: ", j)
+                seleccion_valor.append(valores[i])
+                print("Dato solicitado: ",valores[i])
+
+
 
 
     def copy(arch, sep=';'):
