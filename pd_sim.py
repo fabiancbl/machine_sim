@@ -1,3 +1,5 @@
+from decorador import table_decorador
+
 seleccion_titulo=[]
 seleccion_valor=[]
 
@@ -5,6 +7,7 @@ class DataFrame:
     def __init__(self, data, *args, **kwargs):
         self.data = data
 
+    @table_decorador.table
     def __str__(self):
         return str(self.data)
 
