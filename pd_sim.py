@@ -1,3 +1,6 @@
+seleccion_titulo=[]
+seleccion_valor=[]
+ñ=0
 class DataFrame:
     def __init__(self,data,*args,**kwargs):
         self.data=data
@@ -11,8 +14,10 @@ class DataFrame:
             for k in titulos:
                 valores=self.data[k]
                 if (l>=j[1].start)&(l<j[1].stop):
+                    seleccion_titulo.append(k)
                     print("\nTitulo: ",k)
                     for g in range(j[0].start,j[0].stop):
+                        seleccion_valor.append(valores[g])
                         print("Dato solicitado ",g,": ",valores[g])
 
                 l=l+1
@@ -22,17 +27,19 @@ class DataFrame:
     #Realizar lecturas según su posición
 
     def iloc(self,i):
-
         
         if isinstance(i,slice):
             print("lo logramos")
         if isinstance (i,int):
-
-                    titulos=self.data.keys()
-                    for j in titulos:
-                        valores=self.data[j]
-                        print ("\nTitulo: ", j)
-                        print("Dato solicitado: ",valores[i])
+            seleccion_titulo.clear()
+            seleccion_valor.clear()
+            titulos=self.data.keys()
+            for j in titulos:
+                valores=self.data[j]
+                seleccion_titulo.append(j)
+                print ("\nTitulo: ", j)
+                seleccion_valor.append(valores[i])
+                print("Dato solicitado: ",valores[i])
 
 
 def read_csv(arch,sep=','):
@@ -56,6 +63,9 @@ datos="hola.csv"
 d=read_csv(datos)
 d.iloc(4)
 #d[3:5,0:2]
+print("\n")
+print(seleccion_titulo)
+print(seleccion_valor)
 
 
 
