@@ -14,6 +14,9 @@ class Iat(object):
     def __getitem__(self,nums): #Obtiene los indices de fila y columna
         row,column=nums
         return self.data[row][column]
+    def __setitem__(self,nums,valor):
+        row,column=nums
+        self.data[row][column]=valor
     
 class DataFrame:
     def __init__(self, data, *args, **kwargs):
