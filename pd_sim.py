@@ -3,9 +3,22 @@ from decorador import table_decorador
 seleccion_titulo=[]
 seleccion_valor=[]
 
+'''Willian Chaparro codigo 9520520
+ Se define el metodo .iat
+uso: df[a,b] devuelve la fila 'a' y la columna 'b' de una matriz '''
+
+class Iat(object):
+    def __init__(self,data, *args, **kwargs):
+        self.data=data
+   
+    def __getitem__(self,nums): #Obtiene los indices de fila y columna
+        row,column=nums
+        return self.data[row][column]
+    
 class DataFrame:
     def __init__(self, data, *args, **kwargs):
         self.data = data
+        self.iat=Iat(self.data) #Genera el metodo .iat invocando la clase Iat
 
     @table_decorador.table
     def __str__(self):
@@ -22,12 +35,6 @@ class DataFrame:
 
     def __setitem__(indice, valor):
         pass
-
-    def iat(self, row, column):
-        a = self.data
-        b = a[row]
-        c = b[column]
-        print(c)
 
     def head(arch, n, sep=';'):
         with open(arch) as f:
