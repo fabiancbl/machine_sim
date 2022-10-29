@@ -20,6 +20,8 @@ class Iat(object):
     
 class DataFrame:
     def __init__(self, data, *args, **kwargs):
+        
+        # Contiene la tabla de datos de prueba como un diccionario
         self.data = data
         self.iat=Iat(self.data) #Genera el metodo .iat invocando la clase Iat
 
@@ -51,8 +53,8 @@ class DataFrame:
 
 
 
-    def funcion_tail(arch, n):
-        with open(arch) as f:
+    def funcion_tail(self, n):
+        with open(self) as f:
             lineas = [lineas.strip('\n') for lineas in f.readlines()]
         return lineas[-n:]
 
@@ -183,3 +185,4 @@ def read_csv(arch, sep=','):
             data[titulos[i]].append(elem)
     return DataFrame(data)
 
+print (iloc(self.data,i))
